@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>REL C 225 Final Study Guide - Filled</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1f2933;
+      --muted: #5f6c7b;
+      --line: #d8dee8;
+      --soft: #f5f7fa;
+      --accent: #24546f;
+      --accent-2: #7a4f1d;
+      --paper: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #eef2f6;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+      font-size: 16px;
+    }
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--paper);
+      min-height: 100vh;
+      padding: 44px 54px 64px;
+      box-shadow: 0 18px 50px rgba(31, 41, 51, 0.12);
+    }
+    header {
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+    }
+    .eyebrow {
+      color: var(--accent-2);
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin: 0 0 8px;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 34px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 0;
+    }
+    .meta div {
+      border: 1px solid var(--line);
+      background: var(--soft);
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+    .meta strong { display: block; color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+    nav {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin: 24px 0 32px;
+      background: #fbfcfe;
+    }
+    nav h2 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: var(--accent);
+    }
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px 12px;
+    }
+    a { color: #1d5f85; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+    .unit {
+      break-inside: avoid;
+      margin: 0 0 36px;
+      padding-top: 4px;
+    }
+    .unit-heading {
+      border-top: 2px solid var(--accent);
+      padding-top: 14px;
+      margin-bottom: 14px;
+    }
+    .unit-kicker {
+      margin: 0 0 3px;
+      color: var(--accent-2);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-size: 12px;
+    }
+    h2 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+    .qa {
+      border-top: 1px solid var(--line);
+      padding: 13px 0 14px;
+      break-inside: avoid;
+    }
+    .qa h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      line-height: 1.35;
+      letter-spacing: 0;
+      color: #152935;
+    }
+    .qa h3 span {
+      display: inline-block;
+      min-width: 42px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .qa p {
+      margin: 0;
+      color: #2e3b47;
+    }
+    .source-note {
+      margin-top: 36px;
+      border-top: 3px solid var(--accent);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .source-note h2 { font-size: 20px; color: var(--ink); margin-bottom: 8px; }
+    .source-note ol { margin: 8px 0 0 22px; padding: 0; }
+    .source-note li { margin: 4px 0; }
+    @media (max-width: 760px) {
+      .page { padding: 28px 22px 42px; }
+      h1 { font-size: 28px; }
+      .meta { grid-template-columns: 1fr; }
+      .toc { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media print {
+      body { background: #fff; font-size: 11.5pt; }
+      .page { max-width: none; padding: 0; box-shadow: none; }
+      nav { page-break-after: avoid; }
+      a { color: inherit; text-decoration: none; }
+      .qa { padding: 9px 0 10px; }
+      .unit { margin-bottom: 22px; page-break-inside: avoid; }
+      .unit-heading { page-break-after: avoid; }
+      h1 { font-size: 25pt; }
+      h2 { font-size: 17pt; }
+      .qa h3 { font-size: 11.5pt; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="eyebrow">REL C 225 Online</p>
+      <h1>Final Study Guide - Filled</h1>
+      <p class="subtitle">Static study guide organized by Units 1-14 with concise answers for quick review.</p>
+      <div class="meta">
+        <div><strong>Coverage</strong>14 units, 125 questions</div>
+        <div><strong>Format</strong>Static HTML, print-friendly</div>
+        <div><strong>Use</strong>Review answers, then print or save as PDF</div>
+      </div>
+    </header>
+    <nav aria-label="Unit list">
+      <h2>Units</h2>
+      <div class="toc">
+        <a href="#unit-1">Unit 1</a>
+        <a href="#unit-2">Unit 2</a>
+        <a href="#unit-3">Unit 3</a>
+        <a href="#unit-4">Unit 4</a>
+        <a href="#unit-5">Unit 5</a>
+        <a href="#unit-6">Unit 6</a>
+        <a href="#unit-7">Unit 7</a>
+        <a href="#unit-8">Unit 8</a>
+        <a href="#unit-9">Unit 9</a>
+        <a href="#unit-10">Unit 10</a>
+        <a href="#unit-11">Unit 11</a>
+        <a href="#unit-12">Unit 12</a>
+        <a href="#unit-13">Unit 13</a>
+        <a href="#unit-14">Unit 14</a>
+      </div>
+    </nav>
+    
+    <section class="unit" id="unit-1">
+      <div class="unit-heading">
+        <p class="unit-kicker">Unit 1</p>
+        <h2>Understanding Latter-day Saint Doctrine and History</h2>
+      </div>
+      <article class="qa">
+        <h3><span>1.1</span>What are the six foundational time periods of Church history covered in this class (titles and years)?</h3>
+        <p>New York/Pennsylvania, 1805-1830; Ohio/Missouri, 1831-1838; Nauvoo, 1839-1846; Pioneer/Utah, 1846-1898; expansion/adjustment, 1898-1951; worldwide Church, 1951-present.</p>
+      </article>
+      <article class="qa">
+        <h3><span>1.2</span>What is “doctrine”?</h3>
+        <p>Doctrine is revealed, eternal gospel truth about God, His plan, and salvation through Jesus Christ.</p>
+      </article>
+      <article class="qa">
+        <h3><span>1.3</span>What is the difference in doctrine, principles, covenants, policies, programs, etc.?</h3>
+        <p>Doctrine is eternal truth; principles guide action; ordinances are sacred priesthood acts; covenants are promises with God; policies, programs, and practices are changeable applications.</p>
+      </article>
+      <article class="qa">
+        <h3><span>1.4</span>What are four levels of evaluating an official Church teaching?</h3>
+        <p>Evaluate by canonized scripture/official declarations, united First Presidency and Twelve teachings, repeated official teachings, and individual leader statements.</p>
+      </article>
+      <article class="qa">
+        <h3><span>1.5</span>What are five factors for evaluating a historical source?</h3>
+        <p>Check whether a source is primary, close to the event, authored by a reliable witness, shaped by bias or purpose, and corroborated by other evidence.</p>
+      </article>
+    </section>
+
+    <section class="unit" id="unit-2">
+      <div class="unit-heading">
+        <p class="unit-kicker">Unit 2</p>
+        <h2>The First Vision</h2>
+      </div>
+      <article class="qa">
+        <h3><span>2.1</span>What is the Great Apostasy?</h3>
+        <p>The Great Apostasy is the loss of the fulness of Christ’s Church, including priesthood authority and ordinances, after the deaths of the ancient Apostles.</p>
+      </article>
+      <article class="qa">
+        <h3><span>2.2</span>How many primary accounts of the First Vision did Joseph write; when did he write them?</h3>
+        <p>Four primary accounts: 1832, 1835, 1838, and 1842. The 1838 account became Joseph Smith-History.</p>
+      </article>
+      <article class="qa">
+        <h3><span>2.3</span>What was the audience and context for each of Joseph’s four primary First Vision accounts?</h3>
+        <p>1832: personal history and forgiveness. 1835: told to Robert Matthews. 1838: official Church history. 1842: public summary in the Wentworth Letter.</p>
+      </article>
+      <article class="qa">
+        <h3><span>2.4</span>What are two primary doctrinal messages from the First Vision?</h3>
+        <p>God the Father and Jesus Christ are distinct living beings, and the Restoration was necessary because the fulness of authority and ordinances had been lost.</p>
+      </article>
+    </section>
+
+    <section class="unit" id="unit-3">
+      <div class="unit-heading">
+        <p class="unit-kicker">Unit 3</p>
+        <h2>The Book of Mormon</h2>
+      </div>
+      <article class="qa">
+        <h3><span>3.1</span>How many years passed from Moroni’s first visit to Joseph Smith until Joseph could obtain the gold plates?</h3>
+        <p>Four years: Moroni first appeared in September 1823, and Joseph received the plates in September 1827.</p>
+      </article>
+      <article class="qa">
+        <h3><span>3.2</span>What is the definition of “Urim and Thummim”?</h3>
+        <p>The Urim and Thummim means divinely prepared instruments for revelation or translation; in Book of Mormon history it usually refers to the Nephite interpreters, sometimes broadly to seer stones.</p>
+      </article>
+      <article class="qa">
+        <h3><span>3.3</span>How was the Book of Mormon translated?</h3>
+        <p>Joseph translated by “the gift and power of God,” dictating English text while using the interpreters or a seer stone.</p>
+      </article>
+      <article class="qa">
+        <h3><span>3.4</span>Who were the Three Witnesses of the Book of Mormon plates?</h3>
+        <p>Oliver Cowdery, David Whitmer, and Martin Harris.</p>
+      </article>
+    </section>
+
+    <section class="unit" id="unit-4">
+      <div class="unit-heading">
+        <p class="unit-kicker">Unit 4</p>
+        <h2>Restoration of the Priesthood and the Founding of the Church</h2>
+      </div>
+      <article class="qa">
+        <h3><span>4.1</span>What priesthood and keys did John the Baptist restore?</h3>
+        <p>John the Baptist restored the Aaronic Priesthood, including keys of repentance, baptism, and the ministering of angels.</p>
+      </article>
+      <article class="qa">
+        <h3><span>4.2</span>What priesthood and keys did Peter, James, and John restore?</h3>
+        <p>Peter, James, and John restored the Melchizedek Priesthood and apostolic authority, including authority to confer the Holy Ghost and preside.</p>
+      </article>
+      <article class="qa">
+        <h3><span>4.3</span>What occurred in the “chamber of father Whitmer,” and what is its relationship to the office of Elder?</h3>
+        <p>In the Whitmer home, Joseph and Oliver exercised authority tied to organizing the Church and ordaining elders, an office central to preaching, confirming, and presiding.</p>
+      </article>
+      <article class="qa">
+        <h3><span>4.4</span>How, when, and where was the Church organized?</h3>
+        <p>The Church was organized April 6, 1830, at the Peter Whitmer Sr. home in Fayette, New York, with Joseph Smith and Oliver Cowdery sustained as presiding elders.</p>
+      </article>
+    </section>
+
+    <section class="unit" id="unit-5">
+      <div class="unit-heading">
+        <p class="unit-kicker">Unit 5</p>
+        <h2>History and Purpose of the Doctrine and Covenants</h2>
+      </div>
+      <article class="qa">
+        <h3><span>5.1</span>What are the Manuscript Revelation Books?</h3>
+        <p>The Manuscript Revelation Books are early handwritten collections of Joseph Smith’s revelations, preserving texts later published in the Doctrine and Covenants.</p>
+      </article>
+      <article class="qa">
+        <h3><span>5.2</span>What is the 1833 Book of Commandments?</h3>
+        <p>The 1833 Book of Commandments was the first attempted printed collection of revelations; printing was stopped when a mob destroyed the Independence press.</p>
+      </article>
+      <article class="qa">
+        <h3><span>5.3</span>What were the original “doctrine” and “covenants” parts that created the book’s title?</h3>
+        <p>In 1835, “doctrine” referred mainly to the Lectures on Faith, and “covenants” referred to Joseph Smith’s revelations.</p>
+      </article>
+      <article class="qa">
+        <h3><span>5.4</span>What are several key principles to remember when considering Doctrine and Covenants revelations—including why written revelations have sometimes been altered?</h3>
+        <p>D&amp;C revelations came in historical settings and were sometimes edited, clarified, or expanded for publication as circumstances and understanding developed.</p>
+      </article>
+      <article class="qa">
+        <h3><span>5.5</span>What are the Stewardship Principle, the Brethren Principle, and the Front Door Principle pertaining to personal revelation?</h3>
+        <p>Stewardship: revelation comes within responsibility. Brethren: Churchwide revelation comes through presiding leaders. Front Door: God works through orderly, recognized channels.</p>
+      </article>
+    </section>
+
+    <section class="unit" id="unit-6">
+      <div class="unit-heading">
+        <p class="unit-kicker">Unit 6</p>
+        <h2>Additional Restoration Scripture</h2>
+      </div>
+      <article class="qa">
+        <h3><span>6.1</span>What does it mean that Joseph Smith “translated” the Bible?</h3>
+        <p>Joseph’s Bible “translation” was an inspired revision, not a normal language translation from Hebrew or Greek manuscripts.</p>
+      </article>
+      <article class="qa">
+        <h3><span>6.2</span>By what names have Joseph&#39;s Bible translation been known?</h3>
+        <p>New Translation, Inspired Version, and Joseph Smith Translation (JST).</p>
+      </article>
+      <article class="qa">
+        <h3><span>6.3</span>What types of changes to the Bible did Joseph Smith make?</h3>
+        <p>He made clarifications, doctrinal expansions, wording corrections, harmonizations, restored material, and inspired additions.</p>
+      </article>
+      <article class="qa">
+        <h3><span>6.4</span>Where did the Book of Abraham come from?</h3>
+        <p>The Book of Abraham came through Joseph Smith’s work with Egyptian papyri acquired in 1835; faithful views include direct-translation and catalyst/revelatory models.</p>
+      </article>
+      <article class="qa">
+        <h3><span>6.5</span>How did we get The Pearl of Great Price, and when was it canonized?</h3>
+        <p>Franklin D. Richards compiled the Pearl of Great Price in 1851; the Church canonized it in 1880.</p>
+      </article>
+    </section>
+
+    <section class="unit" id="unit-7">
+      <div class="unit-heading">
+        <p class="unit-kicker">Unit 7</p>
+        <h2>Zion, Gathering of Israel, and the Law of Consecration</h2>
+      </div>
+      <article class="qa">
+        <h3><span>7.1</span>Where was the Church first commanded to gather in this dispensation?</h3>
+        <p>The Saints were first commanded to gather to Ohio in 1831; Jackson County, Missouri, was later identified as Zion’s center place.</p>
+      </article>
+      <article class="qa">
+        <h3><span>7.2</span>What is the city of Zion, or the New Jerusalem?</h3>
+        <p>Zion/New Jerusalem is a holy covenant community and latter-day city built by the pure in heart under God’s law.</p>
+      </article>
+      <article class="qa">
+        <h3><span>7.3</span>Where will the latter-day city of Zion be built?</h3>
+        <p>The center place is Independence, Jackson County, Missouri, though “Zion” also refers broadly to the pure in heart and stakes worldwide.</p>
+      </article>
+      <article class="qa">
+        <h3><span>7.4</span>What was Joseph Smith’s vision for Zion?</h3>
+        <p>Joseph envisioned a temple-centered, consecrated, spiritually united society prepared to receive Christ.</p>
+      </article>
+      <article class="qa">
+        <h3><span>7.5</span>What Doctrine and Covenants section is known as “The Law” of the Church?</h3>
+        <p>Doctrine and Covenants 42.</p>
+      </article>
+      <article class="qa">
+        <h3><span>7.6</span>What are the definitions and differences of “all things common”, the United Order (Firm), and the law of consecration?</h3>
+        <p>“All things common” is economic unity; the United Firm was a specific 1830s stewardship organization; consecration is the enduring covenant to use all we have for God.</p>
+      </article>
+    </section>
+
+    <section class="unit" id="unit-8">
+      <div class="unit-heading">
+        <p class="unit-kicker">Unit 8</p>
+        <h2>Kirtland Revelation</h2>
+      </div>
+      <article class="qa">
+        <h3><span>8.1</span>Which Doctrine and Covenants section is the great revelation on the three degrees of heavenly glory?</h3>
+        <p>Doctrine and Covenants 76, “The Vision,” received by Joseph Smith and Sidney Rigdon in 1832.</p>
+      </article>
+      <article class="qa">
+        <h3><span>8.2</span>What was Joseph Smith doing immediately prior to receiving Doctrine and Covenants 76?</h3>
+        <p>Joseph and Sidney were working on the inspired translation of John 5:29 about resurrection and judgment.</p>
+      </article>
+      <article class="qa">
+        <h3><span>8.3</span>What is a central message of Doctrine and Covenants 76?</h3>
+        <p>Christ’s Atonement is expansive: nearly all inherit glory, while celestial exaltation requires receiving Christ, ordinances, covenants, and overcoming by faith.</p>
+      </article>
+      <article class="qa">
+        <h3><span>8.4</span>“The Vision” actually consists of how many smaller individual visions? What are they?</h3>
+        <p>Commonly six scenes: the Father and Son, Lucifer’s fall, sons of perdition, celestial glory, terrestrial glory, and telestial glory.</p>
+      </article>
+      <article class="qa">
+        <h3><span>8.5</span>What are the general descriptions of who enters outer darkness, the telestial, terrestrial, and celestial degrees of heaven?</h3>
+        <p>Outer darkness is for sons of perdition. Telestial is for the unrepentant wicked eventually redeemed; terrestrial for honorable but not fully valiant; celestial for covenant disciples who receive Christ and overcome.</p>
+      </article>
+      <article class="qa">
+        <h3><span>8.6</span>Which Doctrine and Covenants section teaches that Christ continued from grace to grace, until He received a fulness?</h3>
+        <p>Doctrine and Covenants 93.</p>
+      </article>
+      <article class="qa">
+        <h3><span>8.7</span>How can we each also receive of a fulness?</h3>
+        <p>We receive grace for grace by coming to Christ, keeping commandments, receiving truth and light, and remaining faithful to covenants.</p>
+      </article>
+      <article class="qa">
+        <h3><span>8.8</span>What is the eternal nature of the mind/spirit?</h3>
+        <p>D&amp;C 93 teaches intelligence, or the light of truth, is eternal and was not created from nothing.</p>
+      </article>
+      <article class="qa">
+        <h3><span>8.9</span>What was the purpose of the original School of the Prophets?</h3>
+        <p>It prepared elders for ministry, missions, spiritual power, learning, unity, and the promised Kirtland endowment.</p>
+      </article>
+      <article class="qa">
+        <h3><span>8.10</span>What practices were implemented in the School of the Prophets to help accomplish its objectives?</h3>
+        <p>Participants studied doctrine and secular subjects, prayed, worshipped, used sacred greetings, practiced washing of feet, and sought spiritual gifts.</p>
+      </article>
+      <article class="qa">
+        <h3><span>8.11</span>What were the circumstances that preceded Joseph Smith receiving the Word of Wisdom?</h3>
+        <p>The revelation came in 1833 during the School of the Prophets, partly after concerns about tobacco use and cleanliness in the meeting room.</p>
+      </article>
+      <article class="qa">
+        <h3><span>8.12</span>How and when did the Word of Wisdom become a binding commandment?</h3>
+        <p>It developed gradually: first “not by commandment,” then urged by Brigham Young in 1851, and made a firm temple standard in the early 20th century.</p>
+      </article>
+      <article class="qa">
+        <h3><span>8.13</span>What is a doctrinal definition of endowment?</h3>
+        <p>An endowment is a divine gift of power, knowledge, covenants, and priesthood-connected blessings that prepares disciples to return to God.</p>
+      </article>
+      <article class="qa">
+        <h3><span>8.14</span>What was the Kirtland “endowment,” and how did it develop?</h3>
+        <p>The Kirtland endowment was an endowment of power tied to washings, anointings, solemn assemblies, spiritual gifts, and the 1836 temple dedication.</p>
+      </article>
+      <article class="qa">
+        <h3><span>8.15</span>Who are the heavenly beings who restored priesthood keys, as recorded in Doctrine and Covenants 110?</h3>
+        <p>Christ appeared first; then Moses restored gathering keys, Elias committed the gospel of Abraham, and Elijah restored sealing keys.</p>
+      </article>
+    </section>
+
+    <section class="unit" id="unit-9">
+      <div class="unit-heading">
+        <p class="unit-kicker">Unit 9</p>
+        <h2>Kirtland Opposition and Missouri Expulsion</h2>
+      </div>
+      <article class="qa">
+        <h3><span>9.1</span>What were the primary reasons that the Saints experienced problems in Zion?</h3>
+        <p>Problems came from outside fears of Mormon immigration, politics, religion, and anti-slavery perceptions, plus internal pride, contention, and lack of consecration.</p>
+      </article>
+      <article class="qa">
+        <h3><span>9.2</span>According to the Lord, why did the city of Zion fail to be established?</h3>
+        <p>D&amp;C 101 and 105 say Zion was not established because the Saints were not sufficiently united, obedient, humble, and consecrated.</p>
+      </article>
+      <article class="qa">
+        <h3><span>9.3</span>What was the Kirtland Safety Society?</h3>
+        <p>It was a Kirtland banking venture that failed during the Panic of 1837, causing losses and dissent.</p>
+      </article>
+      <article class="qa">
+        <h3><span>9.4</span>What are some of the reasons for the apostasy that occurred in Kirtland?</h3>
+        <p>Financial collapse, failed expectations, criticism of Joseph Smith, pride, jealousy, speculation, and personal conflict all fueled apostasy.</p>
+      </article>
+      <article class="qa">
+        <h3><span>9.5</span>Where was the Church headquartered after the Saints left Independence, Missouri and Kirtland, Ohio?</h3>
+        <p>Far West, Missouri, became headquarters in 1838; after Missouri, the Saints gathered to Commerce/Nauvoo, Illinois.</p>
+      </article>
+      <article class="qa">
+        <h3><span>9.6</span>Where is Adam-ondi-Ahman, and why is it important?</h3>
+        <p>Adam-ondi-Ahman is in Daviess County, Missouri; D&amp;C 116 links it to Adam and a future sacred meeting.</p>
+      </article>
+      <article class="qa">
+        <h3><span>9.7</span>What were the “Salt Sermon” and the “July 4th Oration,” and who gave them?</h3>
+        <p>Sidney Rigdon gave both 1838 speeches; they denounced dissenters and warned enemies, intensifying fears.</p>
+      </article>
+      <article class="qa">
+        <h3><span>9.8</span>What was the Missouri “Mormon War” of 1838?</h3>
+        <p>It was the 1838 armed conflict in Missouri involving Saints, mobs, militias, raids, Hawn’s Mill, the Extermination Order, imprisonments, and expulsion.</p>
+      </article>
+      <article class="qa">
+        <h3><span>9.9</span>Who were the “Danites”?</h3>
+        <p>The Danites were a secret militant group in Far West, associated with Sampson Avard, formed amid fears and conflict in 1838.</p>
+      </article>
+      <article class="qa">
+        <h3><span>9.10</span>What happened at Gallatin, Missouri?</h3>
+        <p>A voting-day brawl at Gallatin in August 1838 and later Latter-day Saint raids helped escalate the Missouri conflict.</p>
+      </article>
+      <article class="qa">
+        <h3><span>9.11</span>What happened at Hawn’s Mill?</h3>
+        <p>On October 30, 1838, a Missouri militia mob killed 17 Saints at Hawn’s Mill.</p>
+      </article>
+      <article class="qa">
+        <h3><span>9.12</span>What is the Missouri Extermination Order, and who signed it?</h3>
+        <p>Governor Lilburn W. Boggs’s 1838 order directed that the Saints be driven from Missouri or “exterminated.” It was rescinded in 1976.</p>
+      </article>
+      <article class="qa">
+        <h3><span>9.13</span>What were the circumstances surrounding Joseph Smith and other Church leaders being incarcerated in 1838–1839?</h3>
+        <p>After Far West surrendered, Joseph Smith and others were arrested on charges including treason and held in Liberty Jail through winter 1838-1839.</p>
+      </article>
+      <article class="qa">
+        <h3><span>9.14</span>At the time it was written, to whom did Doctrine and Covenants 121:13–23, 39 refer?</h3>
+        <p>Initially it referred to Missouri persecutors and apostates harming the Saints; verse 39 also states the broader danger of unrighteous dominion.</p>
+      </article>
+      <article class="qa">
+        <h3><span>9.15</span>Where did the Saints flee when they were expelled from Missouri?</h3>
+        <p>They fled to Illinois, especially Quincy, then gathered to Commerce/Nauvoo.</p>
+      </article>
+    </section>
+
+    <section class="unit" id="unit-10">
+      <div class="unit-heading">
+        <p class="unit-kicker">Unit 10</p>
+        <h2>Nauvoo Period</h2>
+      </div>
+      <article class="qa">
+        <h3><span>10.1</span>How was the city of Nauvoo established as the headquarters of the Church?</h3>
+        <p>The Saints bought land at Commerce, Illinois, in 1839, renamed it Nauvoo, secured a charter, and built it as their new gathering place.</p>
+      </article>
+      <article class="qa">
+        <h3><span>10.2</span>Who was called as the Church Assistant President (Doctrine and Covenants 124)?</h3>
+        <p>Hyrum Smith.</p>
+      </article>
+      <article class="qa">
+        <h3><span>10.3</span>Who served in the First Presidency in Doctrine and Covenants 124?</h3>
+        <p>Joseph Smith, Sidney Rigdon, and Hyrum Smith; William Law also soon served in Nauvoo-era First Presidency leadership.</p>
+      </article>
+      <article class="qa">
+        <h3><span>10.4</span>What was the Nauvoo House?</h3>
+        <p>A commanded Nauvoo boardinghouse/hotel for visitors and a residence connected to Joseph Smith’s family.</p>
+      </article>
+      <article class="qa">
+        <h3><span>10.5</span>What historical events preceded Joseph Smith’s announcement of baptism for the dead in Nauvoo?</h3>
+        <p>Background included Alvin Smith’s death, D&amp;C 137, questions about the unevangelized dead, and Seymour Brunson’s 1840 funeral sermon.</p>
+      </article>
+      <article class="qa">
+        <h3><span>10.6</span>What are the primary doctrinal teachings relating to vicarious work for the dead?</h3>
+        <p>The living may perform saving ordinances for the dead by priesthood authority; the dead retain agency to accept or reject them.</p>
+      </article>
+      <article class="qa">
+        <h3><span>10.7</span>What is the modern offering of the sons of Levi?</h3>
+        <p>The modern “offering in righteousness” is often understood as worthy temple and family-history work, including records and ordinances for the dead.</p>
+      </article>
+      <article class="qa">
+        <h3><span>10.8</span>What historical factors led to the creation of the Nauvoo Relief Society?</h3>
+        <p>Sarah Kimball and Margaret Cook organized sewing help for temple workers; Joseph expanded it into the Female Relief Society of Nauvoo in 1842.</p>
+      </article>
+      <article class="qa">
+        <h3><span>10.9</span>What are the stated purposes of the Relief Society?</h3>
+        <p>Relieve the poor, save souls, strengthen virtue, support temple work, and organize women for gospel service.</p>
+      </article>
+      <article class="qa">
+        <h3><span>10.10</span>What do the experiences of women in Nauvoo teach us about the relationship of women, the temple, and the priesthood?</h3>
+        <p>Nauvoo women received temple ordinances and priesthood-linked covenant power, though they were not ordained to priesthood offices like men.</p>
+      </article>
+      <article class="qa">
+        <h3><span>10.11</span>What was the “Voice of Innocence” document?</h3>
+        <p>It was a 1844 Relief Society statement defending Nauvoo women against immoral accusations; the setting was complicated by secret plural marriage.</p>
+      </article>
+      <article class="qa">
+        <h3><span>10.12</span>When was the Relief Society disbanded? Why did it occur?</h3>
+        <p>It stopped meeting after March 1844, largely because of plural marriage tensions, leadership concerns, the martyrdom, and the coming exodus.</p>
+      </article>
+      <article class="qa">
+        <h3><span>10.13</span>How and where was the temple endowment introduced in Nauvoo?</h3>
+        <p>Joseph introduced it May 4, 1842, in the upper room of the Red Brick Store, then prepared men and women to administer it in the Nauvoo Temple.</p>
+      </article>
+      <article class="qa">
+        <h3><span>10.14</span>What are the keys to detecting true messengers from false ones?</h3>
+        <p>D&amp;C 129 gives tests for messengers; broadly, true messengers are discerned by revelation, priesthood keys, and fidelity to Christ.</p>
+      </article>
+      <article class="qa">
+        <h3><span>10.15</span>What are the apostasy and adoption theories regarding the relationship between Freemasonry and the source of the temple endowment ceremony?</h3>
+        <p>Masonry likely influenced some outward forms; Latter-day Saints understand the endowment’s authority, covenants, and saving meaning as revealed.</p>
+      </article>
+      <article class="qa">
+        <h3><span>10.16</span>What is the central premise of the King Follett Discourse?</h3>
+        <p>God is an exalted personal being, humans are eternal in nature, and through Christ they can become like God; the sermon is influential but not canonized.</p>
+      </article>
+    </section>
+
+    <section class="unit" id="unit-11">
+      <div class="unit-heading">
+        <p class="unit-kicker">Unit 11</p>
+        <h2>Eternal Marriage and Plural Marriage</h2>
+      </div>
+      <article class="qa">
+        <h3><span>11.1</span>What is the definition of the “new and everlasting covenant of marriage”?</h3>
+        <p>It is eternal marriage sealed by priesthood authority and ratified by the Holy Spirit of Promise.</p>
+      </article>
+      <article class="qa">
+        <h3><span>11.2</span>What ordinances are required for exaltation and to become like God?</h3>
+        <p>Exaltation is tied to baptism, confirmation, priesthood ordination for men, temple initiatory and endowment, eternal marriage sealing, and enduring faith in Christ.</p>
+      </article>
+      <article class="qa">
+        <h3><span>11.3</span>What is meant by “eternal increase”?</h3>
+        <p>Eternal increase means continuing family, posterity, creative power, and divine life in exaltation.</p>
+      </article>
+      <article class="qa">
+        <h3><span>11.4</span>What is meant by “the more sure word of prophecy” or “calling and election sure”?</h3>
+        <p>It is a divine assurance of eternal life, sealed by the Holy Spirit of Promise, conditional on continued faithfulness.</p>
+      </article>
+      <article class="qa">
+        <h3><span>11.5</span>What are the Church’s teachings related to those people who don’t have the opportunity to marry in this life?</h3>
+        <p>No blessing will be denied to faithful people because of circumstances beyond their control; God will provide just opportunities.</p>
+      </article>
+      <article class="qa">
+        <h3><span>11.6</span>What is the context and content of Doctrine and Covenants 132?</h3>
+        <p>D&amp;C 132, recorded in 1843, teaches sealing power, eternal marriage, exaltation, the Holy Spirit of Promise, and plural marriage for that commanded period.</p>
+      </article>
+      <article class="qa">
+        <h3><span>11.7</span>What are the details of Joseph Smith’s practice of plural marriage (when it began, how implemented, how many wives, ages, relationships with them, etc.)?</h3>
+        <p>Joseph began teaching/practicing plural marriage by the 1830s-early 1840s and was sealed to about 30-40 women. Ages and circumstances varied, including some teenage and polyandrous sealings; the record is incomplete and relationship details differ by case.</p>
+      </article>
+      <article class="qa">
+        <h3><span>11.8</span>What is polyandry? What is polygyny?</h3>
+        <p>Polyandry is one woman married/sealed to more than one man; polygyny is one man married/sealed to more than one woman.</p>
+      </article>
+      <article class="qa">
+        <h3><span>11.9</span>According to Doctrine and Covenants 132, what are three reasons why the Church practiced plural marriage during the 19th century?</h3>
+        <p>Reasons include restoring ancient things, raising covenant posterity when commanded, and proving/binding Saints through Abrahamic sacrifice and sealing.</p>
+      </article>
+      <article class="qa">
+        <h3><span>11.10</span>What are some of the theological concepts associated with plural marriage, including dynastic sealings?</h3>
+        <p>It involved sealing power, Abrahamic covenant, eternal increase, sacrifice, and dynastic sealings that linked families to priesthood leaders before later ancestor-focused practice.</p>
+      </article>
+      <article class="qa">
+        <h3><span>11.11</span>What is the Church’s standing law of marriage?</h3>
+        <p>Monogamy is God’s standing law unless He commands otherwise; new plural marriages are not authorized today.</p>
+      </article>
+    </section>
+
+    <section class="unit" id="unit-12">
+      <div class="unit-heading">
+        <p class="unit-kicker">Unit 12</p>
+        <h2>Martyrdom, Succession and Western Exodus</h2>
+      </div>
+      <article class="qa">
+        <h3><span>12.1</span>Why was Joseph Smith killed? (List reasons from John Taylor’s 1854 talk.)</h3>
+        <p>John Taylor taught Joseph died for his prophetic witness, the Book of Mormon, restored priesthood and ordinances, gathering Israel, temple work, and testimony of Christ.</p>
+      </article>
+      <article class="qa">
+        <h3><span>12.2</span>Who were the Laws, the Fosters, and the Higbees, and how were they connected to the martyrdom?</h3>
+        <p>The Laws, Fosters, and Higbees were Nauvoo dissenters who opposed Joseph and helped support the Nauvoo Expositor crisis.</p>
+      </article>
+      <article class="qa">
+        <h3><span>12.3</span>What was the Nauvoo Expositor?</h3>
+        <p>A dissident newspaper published June 7, 1844, criticizing Joseph’s power, plural marriage, and doctrine; its destruction led to legal crisis.</p>
+      </article>
+      <article class="qa">
+        <h3><span>12.4</span>Who was Thomas Ford, and what was his role related to the martyrdom?</h3>
+        <p>Thomas Ford was Illinois governor; he promised protection but failed to prevent the Carthage mob attack.</p>
+      </article>
+      <article class="qa">
+        <h3><span>12.5</span>On what legal charges was Joseph Smith incarcerated in Carthage Jail?</h3>
+        <p>Riot for the Expositor destruction, then treason against Illinois after martial law was declared in Nauvoo.</p>
+      </article>
+      <article class="qa">
+        <h3><span>12.6</span>What was the succession crisis of 1844, and who were the key players?</h3>
+        <p>After Joseph and Hyrum died, claimants included Sidney Rigdon, Brigham Young/the Twelve, James Strang, William Marks, Lyman Wight, William Smith, and later Joseph Smith III.</p>
+      </article>
+      <article class="qa">
+        <h3><span>12.7</span>What were the supposed successors’ various claims to authority?</h3>
+        <p>Rigdon claimed guardianship; the Twelve claimed transferred keys; Strang claimed appointment; Marks claimed stake authority; Smith-family claimants used lineal succession; Wight pursued western plans.</p>
+      </article>
+      <article class="qa">
+        <h3><span>12.8</span>What is the Church’s process of prophetic succession today?</h3>
+        <p>The First Presidency dissolves, the Twelve preside, and the senior apostle is sustained and set apart as the next President.</p>
+      </article>
+      <article class="qa">
+        <h3><span>12.9</span>What are the primary Joseph Smith-centric restoration churches, and how were they established?</h3>
+        <p>Major groups include LDS under Brigham Young, Community of Christ under Joseph Smith III, Strangites, Church of Christ (Temple Lot), and Bickertonite/Rigdonite-linked churches.</p>
+      </article>
+      <article class="qa">
+        <h3><span>12.10</span>What was the Council of Fifty?</h3>
+        <p>A 1844 council exploring religious liberty, political kingdom ideas, Joseph’s presidential campaign, and possible western settlement.</p>
+      </article>
+      <article class="qa">
+        <h3><span>12.11</span>What factors contributed to the Saints’ western exodus and settlement in Utah?</h3>
+        <p>Violence, repeal of the Nauvoo charter, anti-Mormon pressure, desire for temple ordinances, and need for refuge pushed the Saints west.</p>
+      </article>
+    </section>
+
+    <section class="unit" id="unit-13">
+      <div class="unit-heading">
+        <p class="unit-kicker">Unit 13</p>
+        <h2>Official Declarations and Modern Revelation</h2>
+      </div>
+      <article class="qa">
+        <h3><span>13.1</span>When and where did the Church begin to do vicarious endowments?</h3>
+        <p>In the St. George Utah Temple in 1877.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.2</span>Second only to Brigham Young, who was the person largely in charge of making temple worship central to the Saints?</h3>
+        <p>Wilford Woodruff.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.3</span>In conjunction with sealings, what is the law of adoption? How and when did it end?</h3>
+        <p>It sealed adults to priesthood “fathers” or leaders; Wilford Woodruff ended it in 1894 by directing Saints to seal to their own ancestors.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.4</span>What is the name of the federal law that disenfranchised the Church and seized its assets?</h3>
+        <p>The Edmunds-Tucker Act of 1887.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.5</span>How, when, and why was Official Declaration 1 released?</h3>
+        <p>Wilford Woodruff issued the Manifesto in September 1890; the Church accepted it October 6, 1890, to end new plural marriages and preserve temples and ordinances amid federal pressure.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.6</span>What is the Second Manifesto, and who issued it?</h3>
+        <p>Joseph F. Smith’s 1904 statement enforcing the end of new plural marriages worldwide, with discipline for violators.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.7</span>What is the historicity of restricting members of African descent from priesthood offices (when, who, and why it was started)?</h3>
+        <p>No universal restriction is known under Joseph Smith; it developed under Brigham Young in the late 1840s-1850s. The Church says no clear revealed origin is known.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.8</span>What is the Church’s doctrine regarding race?</h3>
+        <p>All are God’s children and may receive priesthood and temple blessings if worthy; the Church condemns racism and rejects past racial theories.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.9</span>What were the names of the black men who were ordained to the priesthood during Joseph Smith’s time?</h3>
+        <p>Elijah Abel and Q. Walker Lewis are the best documented; Joseph T. Ball is also commonly included.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.10</span>When and by whom did the priesthood restriction begin?</h3>
+        <p>It emerged under Brigham Young, especially 1847-1852; no canonized revelation instituting it is known.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.11</span>What were some of the factors that contributed to the restriction on members of African descent receiving the priesthood?</h3>
+        <p>Likely factors include 19th-century racism, slavery debates, anti-interracial-marriage fears, biblical curse theories, and territorial politics; these are not doctrinal justifications.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.12</span>What is Official Declaration 2, and who received the revelation on that subject?</h3>
+        <p>Official Declaration 2 announced the 1978 revelation extending priesthood and temple blessings to all worthy members; President Spencer W. Kimball received it in the Salt Lake Temple.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.13</span>What are the Church’s official teachings today regarding why members of African descent were denied priesthood offices and temple ordinances?</h3>
+        <p>The Church does not claim to know the precise reason and disavows past explanations based on curses, premortal conduct, racial inferiority, or opposition to interracial marriage.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.14</span>Who received Doctrine and Covenants 138, and what were the circumstances surrounding its receipt?</h3>
+        <p>Joseph F. Smith received D&amp;C 138 on October 3, 1918, while pondering 1 Peter and grieving amid war, influenza, and family deaths.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.15</span>What is the difference between scripture and canon?</h3>
+        <p>Scripture is inspired word from God; canon is the official body of scripture accepted as binding standard works.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.16</span>What new doctrines are taught in Doctrine and Covenants 138?</h3>
+        <p>Christ organized righteous spirits to preach in the spirit world; missionary work and redemption of the dead continue beyond mortality.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.17</span>What is the doctrinal status of The Proclamation on the Family?</h3>
+        <p>It is an official prophetic proclamation from the First Presidency and Twelve, authoritative but not canonized in the standard works.</p>
+      </article>
+      <article class="qa">
+        <h3><span>13.18</span>What are the doctrines within The Proclamation on the Family regarding: (a) marriage and procreation, (b) the duties of parents for happy families, (c) the responsibilities of fathers and mothers, and (d) warnings and admonitions to society?</h3>
+        <p>Marriage between man and woman is ordained of God; procreation belongs within marriage; parents should teach and nurture children; fathers and mothers are equal partners with distinct responsibilities; family breakdown and abuse bring accountability.</p>
+      </article>
+    </section>
+
+    <section class="unit" id="unit-14">
+      <div class="unit-heading">
+        <p class="unit-kicker">Unit 14</p>
+        <h2>The Restitution of All Things</h2>
+      </div>
+      <article class="qa">
+        <h3><span>14.1</span>Why is continuing revelation necessary?</h3>
+        <p>Because Christ leads a living Church, circumstances change, and the Restoration unfolds line upon line.</p>
+      </article>
+      <article class="qa">
+        <h3><span>14.2</span>How is doctrine established for the Church?</h3>
+        <p>Doctrine is established by revelation through authorized prophets and apostles, especially united First Presidency and Twelve teaching, scripture, and official Church action.</p>
+      </article>
+      <article class="qa">
+        <h3><span>14.3</span>What is a difference between prophets leading the Church astray and making personal mistakes?</h3>
+        <p>The Lord will not let the President lead the Church into binding apostasy, but prophets can still have mortal limits, opinions, and mistakes.</p>
+      </article>
+      <article class="qa">
+        <h3><span>14.4</span>According to Doctrine and Covenants 21, what two words define how we are to follow living prophets?</h3>
+        <p>“Patience” and “faith” (D&amp;C 21:5).</p>
+      </article>
+      <article class="qa">
+        <h3><span>14.5</span>When will the Restoration be complete?</h3>
+        <p>The Restoration continues until Christ restores all things, gathers Israel, establishes Zion, completes His work, and returns.</p>
+      </article>
+      <article class="qa">
+        <h3><span>14.6</span>How can we participate in the ongoing restoration?</h3>
+        <p>By keeping covenants, doing temple and family-history work, gathering Israel, building Zion, serving others, and following living prophets.</p>
+      </article>
+    </section>
+    <section class="source-note" id="sources">
+      <h2>Source Note</h2>
+      <p>Answers are study-guide summaries based on Latter-day Saint scripture, official Church history resources, Gospel Topics essays, Joseph Smith Papers/Church Historian's Press materials, and BYU Religious Studies Center scholarship. For sensitive topics, the answers use the safest current mainstream framing and note uncertainty where the historical record is incomplete.</p>
+      <ol>
+          <li><a href="https://www.churchofjesuschrist.org/study/scriptures?lang=eng">Doctrine and Covenants, Official Declarations, and Joseph Smith-History</a></li>
+          <li><a href="https://www.churchofjesuschrist.org/study/history/topics/joseph-smiths-first-vision-accounts?lang=eng">Church History Topics, Joseph Smith&#39;s First Vision Accounts</a></li>
+          <li><a href="https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/book-of-mormon-translation?lang=eng">Gospel Topics Essay, Book of Mormon Translation</a></li>
+          <li><a href="https://www.churchofjesuschrist.org/study/history/topics/school-of-the-prophets?lang=eng">Church History Topics, School of the Prophets</a></li>
+          <li><a href="https://www.churchofjesuschrist.org/study/history/topics/temple-endowment?lang=eng">Church History Topics, Temple Endowment</a></li>
+          <li><a href="https://www.churchofjesuschrist.org/study/history/topics/baptism-for-the-dead?lang=eng">Church History Topics, Baptism for the Dead</a></li>
+          <li><a href="https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/plural-marriage-in-kirtland-and-nauvoo?lang=eng">Gospel Topics Essay, Plural Marriage in Kirtland and Nauvoo</a></li>
+          <li><a href="https://www.churchofjesuschrist.org/study/history/topics/succession-of-church-leadership?lang=eng">Church History Topics, Succession of Church Leadership</a></li>
+          <li><a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/od/1?lang=eng">Official Declaration 1</a></li>
+          <li><a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/od/2?lang=eng">Official Declaration 2</a></li>
+          <li><a href="https://www.churchofjesuschrist.org/study/history/topics/vision-of-the-redemption-of-the-dead?lang=eng">Church History Topics, Vision of the Redemption of the Dead</a></li>
+          <li><a href="https://rsc.byu.edu/reason-faith/race-priesthood-temples">BYU Religious Studies Center, Race, the Priesthood, and Temples</a></li>
+          <li><a href="https://www.churchhistorianspress.org/the-first-fifty-years-of-relief-society/part-1/1-10?lang=eng">Church Historian&#39;s Press, The Voice of Innocence</a></li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>
